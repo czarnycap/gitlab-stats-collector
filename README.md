@@ -1,6 +1,7 @@
 # gitlab-stats-collector
 
-set environment variables for your environment
+set environment variables for your environment before running a script
+
 example for Linux:
 ```
 export GITLAB_API_URL=https://gitlab.io
