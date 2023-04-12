@@ -4,14 +4,23 @@ import os
 # get access token and API URL from environment variables
 access_token = os.environ['GITLAB_ACCESS_TOKEN']
 api_url = os.environ['GITLAB_API_URL']
+group_id = os.environ['GITLAB_GROUP_ID']
+
+
 
 # create GitLab API client
 gl = gitlab.Gitlab(api_url, private_token=access_token)
 
-projects = gl.projects.list()
+# group_id = 1217 #piistore group
+
+
+group_a = gl.groups.get(group_id)
+
+projects = group_a.projects.list()
+
 
 for project in projects:
-    print(project)
+    print(project.id)
 
 # # get project ID from project path
 # project_path = 'dataoffice/piistore/piistore-infra' # replace with your project path
