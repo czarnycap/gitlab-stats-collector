@@ -1,5 +1,10 @@
 import gitlab
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 
 # get access token and API URL from environment variables
 access_token = os.environ['GITLAB_ACCESS_TOKEN']
